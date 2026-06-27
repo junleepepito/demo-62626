@@ -1,4 +1,4 @@
-# junleepepito.github.io
+# demo626
 
 Personal site built with Jekyll, the Minima theme, and jekyll-admin for local content management.
 

@@ -1,0 +1,12 @@
+{%- for item in include.items -%}
+  {%- if item.children -%}
+    <div class="nav-dropdown">
+      <a class="page-link nav-dropdown-toggle" href="{{ item.url }}">{{ item.title }}</a>
+      <div class="nav-dropdown-menu">
+        {%- include nav-items.html items=item.children -%}
+      </div>
+    </div>
+  {%- else -%}
+    <a class="page-link" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+  {%- endif -%}
+{%- endfor -%}

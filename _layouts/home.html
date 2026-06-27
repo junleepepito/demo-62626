@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body class="home-page">
+
+    {%- include header.html -%}
+
+    <section class="hero-parallax">
+      <img class="hero-bg" src="{{ "/assets/imgs/1600x800pixel2025.jpg" | relative_url }}" alt="">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Welcome</p>
+        <h1 class="hero-title">{{ site.title | escape }}</h1>
+        <p class="hero-description">{{ site.description | escape }}</p>
+      </div>
+      <div class="hero-wave">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#fdfdfd"/>
+        </svg>
+      </div>
+    </section>
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="home">
+          {{ content }}
+
+          {%- if site.posts.size > 0 -%}
+            <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+            <ul class="post-list">
+              {%- for post in site.posts -%}
+              <li>
+                {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+                <span class="post-meta">{{ post.date | date: date_format }}</span>
+                <h3>
+                  <a class="post-link" href="{{ post.url | relative_url }}">
+                    {{ post.title | escape }}
+                  </a>
+                </h3>
+                {%- if site.show_excerpts -%}
+                  {{ post.excerpt }}
+                {%- endif -%}
+              </li>
+              {%- endfor -%}
+            </ul>
+
+            <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+          {%- endif -%}
+        </div>
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>

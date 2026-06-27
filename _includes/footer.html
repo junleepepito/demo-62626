@@ -1,0 +1,43 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">{{ site.author | default: site.title | escape }}</h2>
+
+    <div class="footer-col-wrapper">
+
+      <!-- Col 1: Author name + contact email -->
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">
+            {{ site.author | default: "[author name here]" | escape }}
+          </li>
+          <li>
+            {%- if site.email -%}
+              <a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a>
+            {%- else -%}
+              [your email here]
+            {%- endif -%}
+          </li>
+        </ul>
+      </div>
+
+      <!-- Col 2: Social media icons — set usernames in _config.yml to activate -->
+      <div class="footer-col footer-col-2">
+        {%- include social.html -%}
+        <!-- [social links here — set github_username, twitter_username, etc. in _config.yml] -->
+      </div>
+
+      <!-- Col 3: Site description + copyright -->
+      <div class="footer-col footer-col-3">
+        <p>{{ site.description | default: "[site description here]" | escape }}</p>
+        <p>&copy; {{ site.time | date: "%Y" }}</p>
+        <!-- [add extra links here, e.g. Privacy Policy, RSS, About] -->
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>

@@ -1,0 +1,26 @@
+- title: Home
+  url: /
+
+- title: About
+  url: "#about"
+
+- title: Legislation
+  url: "#"
+  children:
+    - title: Ordinance
+      url: "#"
+      children:
+        - title: General
+          url: "#"
+        - title: Appropriation
+          url: "#"
+        - title: Tax
+          url: "#"
+    - title: Resolutions
+      url: "#"
+
+- title: GAD
+  url: "#"
+
+- title: Contact
+  url: "#contact"

@@ -1,0 +1,40 @@
+# ---------------------------------------------------------------
+# SITE IDENTITY
+# ---------------------------------------------------------------
+
+title: junlee-poc
+author: junl.ee
+description: poc/demo site
+
+# Your public site URL — required for SEO tags and feed
+# url: "https://yoursite.com"
+
+# Only needed if your site lives in a subfolder, e.g. /blog
+# baseurl: ""
+
+# ---------------------------------------------------------------
+# TOPBAR
+# ---------------------------------------------------------------
+
+topbar_phone: "(000) 000 - 0000"
+
+# topbar_email: your@email.com
+# topbar_facebook: https://facebook.com/yourpage
+
+# ---------------------------------------------------------------
+# BUILD SETTINGS  (leave these as-is)
+# ---------------------------------------------------------------
+
+baseurl: ""
+url: ""
+theme: minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+sass:
+  silence_deprecations:
+    - import
+    - global-builtin
+    - color-functions

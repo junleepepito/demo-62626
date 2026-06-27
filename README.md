@@ -6,7 +6,7 @@ Personal site built with Jekyll, the Minima theme, and jekyll-admin for local co
 
 ## Running locally
 
-All gems are pre-cached in `vendor/cache/` — no internet needed after cloning.
+All gems are pre-cached in `vendor/cache/` and committed to the repository, so `bundle install --local` works without internet access after cloning.
 
 ```bash
 # Install gems from local cache

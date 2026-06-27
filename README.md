@@ -21,19 +21,35 @@ bundle exec jekyll serve
 
 ---
 
+## Deploying to GitHub Pages
+
+Pushes to `main` automatically build and deploy via GitHub Actions (`.github/workflows/deploy.yml`).
+
+The workflow merges `_config.yml` with `_config_prod.yml` at build time, which sets the correct `url` and `baseurl` for GitHub Pages. This keeps local dev unaffected — `bundle exec jekyll serve` always runs at `http://localhost:4000` with no subfolder.
+
+In your repo **Settings → Pages**, set the source to **GitHub Actions**.
+
+Live site: `https://junleepepito.github.io/demo-62626`
+
+> `jekyll-admin` is local-only and not used during CI builds.
+
+---
+
 ## Project structure
 
 ```
-├── _layouts/       ← page templates (default, home, post, page)
-├── _includes/      ← reusable HTML parts (header, footer, head)
-├── _sass/          ← styles
-├── assets/         ← compiled CSS and icons
-├── _plugins/       ← runtime patches
-├── _posts/         ← blog posts
-├── vendor/cache/   ← cached gems for offline install
-├── Gemfile         ← dependencies
-├── Gemfile.lock    ← locked versions
-└── _config.yml     ← site settings
+├── _layouts/           ← page templates (default, home, post, page)
+├── _includes/          ← reusable HTML parts (header, footer, head)
+├── _sass/              ← styles
+├── assets/             ← compiled CSS and icons
+├── _plugins/           ← runtime patches
+├── _posts/             ← blog posts
+├── vendor/cache/       ← cached gems for offline install
+├── .github/workflows/  ← GitHub Actions deploy workflow
+├── Gemfile             ← dependencies
+├── Gemfile.lock        ← locked versions
+├── _config.yml         ← site settings (local)
+└── _config_prod.yml    ← production URL overrides (CI only)
 ```
 
 ---

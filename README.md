@@ -16,8 +16,8 @@ bundle install --local
 bundle exec jekyll serve
 ```
 
-- Site → `http://localhost:4000`
-- Admin panel → `http://localhost:4000/admin`
+- Site → `http://localhost:4000/demo-62626`
+- Admin panel → `http://localhost:4000/demo-62626/admin`
 
 ---
 
@@ -25,7 +25,7 @@ bundle exec jekyll serve
 
 Pushes to `main` automatically build and deploy via GitHub Actions (`.github/workflows/deploy.yml`).
 
-The workflow merges `_config.yml` with `_config_prod.yml` at build time, which sets the correct `url` and `baseurl` for GitHub Pages. This keeps local dev unaffected — `bundle exec jekyll serve` always runs at `http://localhost:4000` with no subfolder.
+The workflow merges `_config.yml` with `_config_prod.yml` at build time, which sets the correct `url` for GitHub Pages. Both local and production use `baseurl: "/demo-62626"`, so paths are identical in both environments.
 
 In your repo **Settings → Pages**, set the source to **GitHub Actions**.
 

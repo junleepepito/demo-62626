@@ -1,3 +1,2 @@
 # Production overrides — merged by CI only, not used locally
 url: "https://junleepepito.github.io"
-baseurl: "/demo-62626"
